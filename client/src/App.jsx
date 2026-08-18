@@ -1,20 +1,31 @@
-import { useState } from 'react'
-import BootScreen from './components/BootScreen'
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Navbar, Home, BootScreen, Dock } from "./components";
 
-function App() {
-  const [isBooting, setIsBooting] = useState(true)
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      {isBooting && <BootScreen onComplete={() => setIsBooting(false)} />}
-      
-      {!isBooting && (
-        <main className="p-8">
-          <h1 className="text-4xl font-bold">Portfolio</h1>
-        </main>
-      )}
-    </div>
-  )
-}
+    <main className="relative w-full h-screen overflow-hidden bg-black">
+  
+      {isLoading && <BootScreen onComplete={() => setIsLoading(false)} />}
 
-export default App
+      <motion.div 
+        className="w-full h-full"
+        initial={{ scale: 1.1, filter: "blur(10px)" }} 
+        animate={{ 
+          scale: isLoading ? 1.1 : 1, 
+          filter: isLoading ? "blur(10px)" : "blur(0px)" 
+        }}
+        transition={{ duration: 0.5, ease: "easeOut" }} 
+      >
+          <Home />
+          <Navbar />
+          {!isLoading && <Dock />}
+      </motion.div>
+
+    </main>
+  );
+};
+
+export default App;
