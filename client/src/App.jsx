@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Navbar, Home, BootScreen, Dock } from "./components";
+import { Terminal } from "./windows";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,7 +22,12 @@ const App = () => {
       >
           <Home />
           <Navbar />
-          {!isLoading && <Dock />}
+          {!isLoading && (
+            <>
+              <Dock />
+              <Terminal />
+            </>
+          )}
       </motion.div>
 
     </main>
