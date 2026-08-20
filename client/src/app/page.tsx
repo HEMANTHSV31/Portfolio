@@ -1,6 +1,7 @@
 "use client";
 import { ParticlesBackground } from "@/components/ParticlesBackground";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -83,7 +84,7 @@ export default function Home() {
             whileHover={{ scale: 1.05, y: -5 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
-            <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-lg p-6 hover:shadow-xl transition-shadow h-full flex flex-col justify-between">
+            <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-lg p-6 hover:shadow-xl transition-shadow h-full flex flex-col justify-between mx-4 md:m-0">
               <div>
                 <h3 className="text-xl font-semibold mb-3 text-white">CloudSync</h3>
                 <p className="text-zinc-400 mb-4 text-left">
@@ -104,7 +105,7 @@ export default function Home() {
             whileHover={{ scale: 1.05, y: -5 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
-            <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-lg p-6 hover:shadow-xl transition-shadow h-full flex flex-col justify-between">
+            <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-lg p-6 hover:shadow-xl transition-shadow h-full flex flex-col justify-between mx-4 md:m-0">
               <div>
                 <h3 className="text-xl font-semibold mb-3 text-white">VisionAI</h3>
                 <p className="text-zinc-400 mb-4 text-left">
@@ -125,7 +126,7 @@ export default function Home() {
             whileHover={{ scale: 1.05, y: -5 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
-            <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-lg p-6 hover:shadow-xl transition-shadow h-full flex flex-col justify-between">
+            <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-lg p-6 hover:shadow-xl transition-shadow h-full flex flex-col justify-between mx-4 md:m-0">
               <div>
                 <h3 className="text-xl font-semibold mb-3 text-white">FlowState</h3>
                 <p className="text-zinc-400 mb-4 text-left">
@@ -157,59 +158,59 @@ export default function Home() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
           
           <div className="flex flex-col items-center text-center">
-            <img src="/tech-icons/rust.svg" alt="Rust" className="w-16 h-16 mb-4" />
+            <Image src="/tech-icons/rust.svg" alt="Rust" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">Rust</span>
           </div>
 
           <div className="flex flex-col items-center text-center">
-            <img src="/tech-icons/python.svg" alt="Python" className="w-16 h-16 mb-4" />
+            <Image src="/tech-icons/python.svg" alt="Python" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">Python</span>
           </div>
 
           <div className="flex flex-col items-center text-center">
-            <img src="/tech-icons/javascript.svg" alt="JavaScript" className="w-16 h-16 mb-4" />
+            <Image src="/tech-icons/javascript.svg" alt="JavaScript" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">JavaScript</span>
           </div>
 
           <div className="flex flex-col items-center text-center">
-            <img src="/tech-icons/nodejs.svg" alt="Node.js" className="w-16 h-16 mb-4" />
+            <Image src="/tech-icons/nodejs.svg" alt="Node.js" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">Node.js</span>
           </div>
 
           <div className="flex flex-col items-center text-center">
-            <img src="/tech-icons/aws.svg" alt="AWS" className="w-16 h-16 mb-4" />
+            <Image src="/tech-icons/aws.svg" alt="AWS" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">AWS</span>
           </div>
 
           <div className="flex flex-col bg-white/5 text-black items-center text-center rounded-xl p-2 border border-white/10">
             <div className="w-16 h-16 bg-white p-2 rounded-xl flex items-center justify-center mb-2">
-              <img src="/tech-icons/nextjs.svg" alt="Next.js" className="w-12 h-12" />
+              <Image src="/tech-icons/nextjs.svg" alt="Next.js" width={48} height={48} className="w-12 h-12" />
             </div>
             <span className="font-semibold text-md text-white">Next.js</span>
           </div>
           
           <div className="flex flex-col items-center text-center">
-            <img src="/tech-icons/react.svg" alt="React" className="w-16 h-16 mb-4" />
+            <Image src="/tech-icons/react.svg" alt="React" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">React</span>
           </div>
 
           <div className="flex flex-col items-center text-center">
-            <img src="/tech-icons/tailwindcss.svg" alt="Tailwind CSS" className="w-16 h-16 mb-4" />
+            <Image src="/tech-icons/tailwindcss.svg" alt="Tailwind CSS" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">Tailwind</span>
           </div>
           
           <div className="flex flex-col items-center text-center">
-            <img src="/tech-icons/git.svg" alt="Git" className="w-16 h-16 mb-4" />
+            <Image src="/tech-icons/git.svg" alt="Git" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">Git</span>
           </div>
 
           <div className="flex flex-col items-center text-center">
-            <img src="/tech-icons/github.svg" alt="GitHub" className="w-16 h-16 mb-4" />
+            <Image src="/tech-icons/github.svg" alt="GitHub" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">GitHub</span>
           </div>
 
           <div className="flex flex-col items-center text-center">
-            <img src="/tech-icons/ai.svg" alt="Gen AI" className="w-16 h-16 mb-4" />
+            <Image src="/tech-icons/ai.svg" alt="Gen AI" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">Gen AI</span>
           </div>
 
