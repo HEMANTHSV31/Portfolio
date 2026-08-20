@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "../styles/globals.css";
+import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/Navbar";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  title: "Portfolio | Next.js",
-  description: "A premium, completely new portfolio created with Next.js and Tailwind CSS",
+  title: "Hemanth | Portfolio",
+  description: "Showcasing my work in finance tech, web, and mobile development.",
 };
 
 export default function RootLayout({
@@ -13,8 +27,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
-        {children}
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <Navbar />
+
+        <main className="flex-1">{children}</main>
+
+        <Footer />
       </body>
     </html>
   );
