@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
+  const MotionLink = motion(Link);
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-center">
       <div className="fixed inset-0 -z-10 w-full h-full top-0 left-0">
@@ -12,7 +14,7 @@ export default function Home() {
       </div>
       
       {/* hero section */}
-      <motion.section
+      <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
@@ -20,12 +22,13 @@ export default function Home() {
       >
         <motion.h1
           className="text-4xl sm:text-6xl font-bold tracking-tight"
-          animate={{ y: [0,-9,0],
+          animate={{
+            y: [0, -9, 0],
             transition: {
               duration: 1,
               ease: "easeInOut",
             },
-           }}
+          }}
         >
           I Build Systems Where <br />{" "}
           <span className="bg-gradient-to-r from-red-500 to-zinc-500 bg-clip-text text-transparent">
@@ -36,116 +39,145 @@ export default function Home() {
           Backend developer specializing in distributed systems. I build scalable infrastructure, Web3 protocols, and production-ready Generative AI architectures. Let&apos;s talk nodes, models, and robust APIs.
         </p>
         <div className="mt-8 flex justify-center gap-4">
-          <Link
+          <MotionLink
             href="/projects"
-            className="bg-red-500 hover:bg-red-600 font-semibold text-md rounded-xl px-5 py-2 transition text-white"
+            whileTap={{ scale: 0.9 }}
+            className="bg-red-500 hover:bg-red-600 text-white font-semibold text-md rounded-xl px-5 py-2 transition"
           >
             See My Projects
-          </Link>
+          </MotionLink>
         </div>
-      </motion.section>
+      </motion.div>
 
       {/* about me section */}
-      <motion.section
+      <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
-        className="mt-20 text-center max-w-3xl mx-auto px-4"
+        className="mt-20 text-center max-w-4xl mx-auto px-4 h-full"
       >
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4 "> <span className=" bg-gradient-to-r from-red-600 via-white/70 to-red-600 bg-clip-text text-transparent">About Me</span> </h2>
+        <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          <span className="bg-gradient-to-r from-red-600 via-white/70 to-red-600 bg-clip-text text-transparent">
+            About Me
+          </span>
+        </h2>
         <p className="text-lg sm:text-xl text-muted-foreground mb-6">
           I&apos;m a backend developer with a deep focus on crypto, distributed systems, and Generative AI. Currently building{" "}
           <strong>CloudSync</strong>, <strong>VisionAI</strong> &{" "}
           <strong>FlowState</strong> — blending infrastructure, security, and AI.
         </p>
-        <Link
+        <MotionLink
+          whileTap={{ scale: 0.9 }}
           href="/about"
           className="inline-block bg-transparent border border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-semibold text-sm rounded-xl px-5 py-2 transition"
         >
           More About Me
-        </Link>
-      </motion.section>
+        </MotionLink>
+      </motion.div>
 
       {/* projects preview section */}
-      <motion.section
+      <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
-        className="mt-20 text-center max-w-5xl mx-auto px-4"
+        className="mt-20 text-center max-w-7xl mx-auto px-4 h-full"
       >
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8">
-          <span className="bg-gradient-to-r from-red-600 via-white/70 to-red-600 bg-clip-text text-transparent">Featured Projects</span>
+          <span className="bg-gradient-to-r from-red-600 via-white/70 to-red-600 bg-clip-text text-transparent">
+            Featured Projects
+          </span>
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {/* Project 1 */}
-          <motion.section
+          <motion.div
             whileHover={{ scale: 1.05, y: -5 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
-            <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-lg p-6 hover:shadow-xl transition-shadow h-full flex flex-col justify-between mx-4 md:m-0">
+            <div className="bg-white/10 border border-white/50 backdrop-blur rounded-lg p-6 hover:shadow-2xl hover:border-red-500/50 transition-shadow h-full flex flex-col justify-between mx-4 md:m-0">
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-white">CloudSync</h3>
-                <p className="text-zinc-400 mb-4 text-left">
+                <div className="h-1 w-10 bg-gradient-to-r from-red-600 to-red-400 mb-4 rounded"></div>
+                <h3 className="text-xl font-semibold mb-3 text-white text-left">CloudSync</h3>
+                <p className="text-white/80 mb-4 text-left">
                   A secure, decentralized file storage platform utilizing AWS S3 and end-to-end encryption.
                 </p>
+                <div className="flex gap-2 mb-4">
+                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">Next.js</span>
+                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">AWS S3</span>
+                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">Node.js</span>
+                </div>
               </div>
-              <Link
+              <MotionLink
+                whileTap={{ scale: 0.9 }}
                 href="/projects"
                 className="inline-block bg-red-500 text-white font-semibold text-sm rounded-xl px-5 py-2 transition hover:bg-red-600 text-center"
               >
                 View Project
-              </Link>
+              </MotionLink>
             </div>
-          </motion.section>
+          </motion.div>
           
           {/* Project 2 */}
-          <motion.section
+          <motion.div
             whileHover={{ scale: 1.05, y: -5 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
-            <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-lg p-6 hover:shadow-xl transition-shadow h-full flex flex-col justify-between mx-4 md:m-0">
+            <div className="bg-white/10 border border-white/50 backdrop-blur rounded-lg p-6 hover:shadow-2xl hover:border-red-500/50 transition-shadow h-full flex flex-col justify-between mx-4 md:m-0">
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-white">VisionAI</h3>
-                <p className="text-zinc-400 mb-4 text-left">
+                <div className="h-1 w-10 bg-gradient-to-r from-red-600 to-red-400 mb-4 rounded"></div>
+                <h3 className="text-xl font-semibold mb-3 text-white text-left">VisionAI</h3>
+                <p className="text-white/80 mb-4 text-left">
                   A machine learning model built with PyTorch that analyzes medical imagery to detect anomalies.
                 </p>
+                <div className="flex gap-2 mb-4">
+                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">PyTorch</span>
+                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">React</span>
+                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">Python</span>
+                </div>
               </div>
-              <Link
+              <MotionLink
+                whileTap={{ scale: 0.9 }}
                 href="/projects"
                 className="inline-block bg-red-500 text-white font-semibold text-sm rounded-xl px-5 py-2 transition hover:bg-red-600 text-center"
               >
                 View Project
-              </Link>
+              </MotionLink>
             </div>
-          </motion.section>
+          </motion.div>
 
           {/* Project 3 */}
-          <motion.section
+          <motion.div
             whileHover={{ scale: 1.05, y: -5 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
-            <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-lg p-6 hover:shadow-xl transition-shadow h-full flex flex-col justify-between mx-4 md:m-0">
+            <div className="bg-white/10 border border-white/50 backdrop-blur rounded-lg p-6 hover:shadow-2xl hover:border-red-500/50 transition-shadow h-full flex flex-col justify-between mx-4 md:m-0">
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-white">FlowState</h3>
-                <p className="text-zinc-400 mb-4 text-left">
+                <div className="h-1 w-10 bg-gradient-to-r from-red-600 to-red-400 mb-4 rounded"></div>
+                <h3 className="text-xl font-semibold mb-3 text-white text-left">FlowState</h3>
+                <p className="text-white/80 mb-4 text-left">
                   A cross-platform productivity application written in Rust and Tauri for deep focus.
                 </p>
+                <div className="flex gap-2 mb-4">
+                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">Rust</span>
+                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">Tauri</span>
+                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">React</span>
+                </div>
               </div>
-              <Link
+              <MotionLink
+                whileTap={{ scale: 0.9 }}
                 href="/projects"
                 className="inline-block bg-red-500 text-white font-semibold text-sm rounded-xl px-5 py-2 transition hover:bg-red-600 text-center"
               >
                 View Project
-              </Link>
+              </MotionLink>
             </div>
-          </motion.section>
+          </motion.div>
         </div>
-      </motion.section>
+      </motion.div>
 
       {/* tech stack section */}
-      <motion.section
+      <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
@@ -153,69 +185,71 @@ export default function Home() {
         className="mt-20 py-10 mb-20 text-center max-w-4xl mx-auto w-full px-4"
       >
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
-          <span className="bg-gradient-to-r from-red-600 via-white/70 to-red-600 bg-clip-text text-transparent">Tech Stack</span>
+          <span className="bg-gradient-to-r from-red-600 via-white/70 to-red-600 bg-clip-text text-transparent">
+            Tech Stack
+          </span>
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
           
-          <div className="flex flex-col items-center text-center">
+          <motion.div whileHover={{ y: 2, scale: 0.9 }} className="flex flex-col items-center text-center">
             <Image src="/tech-icons/rust.svg" alt="Rust" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">Rust</span>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col items-center text-center">
+          <motion.div whileHover={{ y: 2, scale: 0.9 }} className="flex flex-col items-center text-center">
             <Image src="/tech-icons/python.svg" alt="Python" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">Python</span>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col items-center text-center">
+          <motion.div whileHover={{ y: 2, scale: 0.9 }} className="flex flex-col items-center text-center">
             <Image src="/tech-icons/javascript.svg" alt="JavaScript" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">JavaScript</span>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col items-center text-center">
+          <motion.div whileHover={{ y: 2, scale: 0.9 }} className="flex flex-col items-center text-center">
             <Image src="/tech-icons/nodejs.svg" alt="Node.js" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">Node.js</span>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col items-center text-center">
+          <motion.div whileHover={{ y: 2, scale: 0.9 }} className="flex flex-col items-center text-center">
             <Image src="/tech-icons/aws.svg" alt="AWS" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">AWS</span>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col bg-white/5 text-black items-center text-center rounded-xl p-2 border border-white/10">
-            <div className="w-16 h-16 bg-white p-2 rounded-xl flex items-center justify-center mb-2">
+          <motion.div whileHover={{ y: 2, scale: 0.9 }} className="flex flex-col text-white items-center text-center">
+            <div className="w-20 h-20 p-2 rounded-xl flex items-center justify-center">
               <Image src="/tech-icons/nextjs.svg" alt="Next.js" width={48} height={48} className="w-12 h-12" />
             </div>
             <span className="font-semibold text-md text-white">Next.js</span>
-          </div>
+          </motion.div>
           
-          <div className="flex flex-col items-center text-center">
+          <motion.div whileHover={{ y: 2, scale: 0.9 }} className="flex flex-col items-center text-center">
             <Image src="/tech-icons/react.svg" alt="React" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">React</span>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col items-center text-center">
+          <motion.div whileHover={{ y: 2, scale: 0.9 }} className="flex flex-col items-center text-center">
             <Image src="/tech-icons/tailwindcss.svg" alt="Tailwind CSS" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">Tailwind</span>
-          </div>
+          </motion.div>
           
-          <div className="flex flex-col items-center text-center">
+          <motion.div whileHover={{ y: 2, scale: 0.9 }} className="flex flex-col items-center text-center">
             <Image src="/tech-icons/git.svg" alt="Git" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">Git</span>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col items-center text-center">
+          <motion.div whileHover={{ y: 2, scale: 0.9 }} className="flex flex-col items-center text-center">
             <Image src="/tech-icons/github.svg" alt="GitHub" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">GitHub</span>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col items-center text-center">
+          <motion.div whileHover={{ y: 2, scale: 0.9 }} className="flex flex-col items-center text-center">
             <Image src="/tech-icons/ai.svg" alt="Gen AI" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">Gen AI</span>
-          </div>
+          </motion.div>
 
         </div>
-      </motion.section>
+      </motion.div>
     </main>
   );
 }

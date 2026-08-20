@@ -1,43 +1,64 @@
-'use client';
+"use client";
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 
 export const Navbar = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
 
   return (
-    <nav className="bg-black text-white sticky top-0 z-50 shadow-md bg-gradient-to-r from-black via-zinc-900 to-red-900">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <Link href="/" className="text-xl font-bold">
-          Hemanth&apos;s Portfolio
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-md w-[90%] text-white px-8 py-3 rounded-2xl shadow-xl flex items-center justify-between z-50">
+      {/* Logo / Name */}
+      <Link href="/" className="text-lg font-bold tracking-wide">
+        Hemanth
+      </Link>
+
+      {/* Desktop Links */}
+      <div className="hidden md:flex items-center gap-8 font-medium">
+        <Link href="/projects" className="hover:text-red-400 transition">
+          Projects
         </Link>
-        
-        {/* Desktop Links */}
-        <div className="hidden md:flex space-x-6">
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/projects">Projects</Link>
-          <Link href="/contact">Contact</Link>
-        </div>
-        
-        {/* Mobile Hamburger */}
-        <button
-          className="md:hidden"
-          onClick={() => setOpenDrawer(!openDrawer)}
-          aria-label="Toggle menu"
+        <Link href="/about" className="hover:text-red-400 transition">
+          About
+        </Link>
+        <a
+          href="/Hemanth_Resume.pdf"
+          download
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 border border-red-500 hover:bg-red-500 hover:text-white rounded-xl px-4 py-1.5 transition"
         >
-          {openDrawer ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          <Download size={16} /> Resume
+        </a>
       </div>
+
+      {/* Mobile Hamburger */}
+      <button
+        className="md:hidden"
+        onClick={() => setOpenDrawer(!openDrawer)}
+        aria-label="Toggle menu"
+      >
+        {openDrawer ? <X size={24} /> : <Menu size={24} />}
+      </button>
 
       {/* Mobile Drawer */}
       {openDrawer && (
-        <div className="md:hidden bg-zinc-950 px-6 py-4 space-y-4 flex-col flex border-t border-zinc-800">
-          <Link href="/" onClick={() => setOpenDrawer(false)}>Home</Link>
-          <Link href="/about" onClick={() => setOpenDrawer(false)}>About</Link>
-          <Link href="/projects" onClick={() => setOpenDrawer(false)}>Projects</Link>
-          <Link href="/contact" onClick={() => setOpenDrawer(false)}>Contact</Link>
+        <div className="absolute top-16 right-4 bg-zinc-900/95 px-6 py-4 rounded-xl shadow-lg space-y-4 flex flex-col font-medium md:hidden">
+          <Link href="/projects" onClick={() => setOpenDrawer(false)} className="hover:text-red-400">
+            Projects
+          </Link>
+          <Link href="/about" onClick={() => setOpenDrawer(false)} className="hover:text-red-400">
+            About
+          </Link>
+          <a
+            href="/Hemanth_Resume.pdf"
+            download
+            target="_blank"
+            onClick={() => setOpenDrawer(false)}
+            className="flex items-center gap-2 border border-red-500 hover:bg-red-500 hover:text-white rounded-xl px-4 py-1.5 transition"
+          >
+            <Download size={16} /> Resume
+          </a>
         </div>
       )}
     </nav>
