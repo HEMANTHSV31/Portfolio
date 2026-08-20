@@ -32,11 +32,11 @@ export default function Home() {
         >
           I Build Systems Where <br />{" "}
           <span className="bg-gradient-to-r from-red-500 to-zinc-500 bg-clip-text text-transparent">
-            Crypto meets Gen AI
+            Finance meets Code
           </span>
         </motion.h1>
         <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-          Backend developer specializing in distributed systems. I build scalable infrastructure, Web3 protocols, and production-ready Generative AI architectures. Let&apos;s talk nodes, models, and robust APIs.
+          Full-stack dev with a quant brain. I make web, Android & trading systems. Soon diving deep into ML. Turning logic into leverage. Building, trading, optimizing.
         </p>
         <div className="mt-8 flex justify-center gap-4">
           <MotionLink
@@ -64,8 +64,8 @@ export default function Home() {
         </h2>
         <p className="text-lg sm:text-xl text-muted-foreground mb-6">
           I&apos;m a backend developer with a deep focus on crypto, distributed systems, and Generative AI. Currently building{" "}
-          <strong>CloudSync</strong>, <strong>VisionAI</strong> &{" "}
-          <strong>FlowState</strong> — blending infrastructure, security, and AI.
+          <strong>Zenin</strong>, <strong>Dazai</strong> &{" "}
+          <strong>RentKr</strong> — blending code, finance, and clean design.
         </p>
         <MotionLink
           whileTap={{ scale: 0.9 }}
@@ -98,14 +98,13 @@ export default function Home() {
             <div className="bg-white/10 border border-white/50 backdrop-blur rounded-lg p-6 hover:shadow-2xl hover:border-red-500/50 transition-shadow h-full flex flex-col justify-between mx-4 md:m-0">
               <div>
                 <div className="h-1 w-10 bg-gradient-to-r from-red-600 to-red-400 mb-4 rounded"></div>
-                <h3 className="text-xl font-semibold mb-3 text-white text-left">CloudSync</h3>
+                <h3 className="text-xl font-semibold mb-3 text-white text-left">Zenin</h3>
                 <p className="text-white/80 mb-4 text-left">
-                  A secure, decentralized file storage platform utilizing AWS S3 and end-to-end encryption.
+                  A personal finance tracker app, analyzing transactions and suggesting savings strategies.
                 </p>
                 <div className="flex gap-2 mb-4">
-                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">Next.js</span>
-                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">AWS S3</span>
-                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">Node.js</span>
+                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">React Native</span>
+                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">Firebase</span>
                 </div>
               </div>
               <MotionLink
@@ -126,14 +125,14 @@ export default function Home() {
             <div className="bg-white/10 border border-white/50 backdrop-blur rounded-lg p-6 hover:shadow-2xl hover:border-red-500/50 transition-shadow h-full flex flex-col justify-between mx-4 md:m-0">
               <div>
                 <div className="h-1 w-10 bg-gradient-to-r from-red-600 to-red-400 mb-4 rounded"></div>
-                <h3 className="text-xl font-semibold mb-3 text-white text-left">VisionAI</h3>
+                <h3 className="text-xl font-semibold mb-3 text-white text-left">Dazai</h3>
                 <p className="text-white/80 mb-4 text-left">
-                  A machine learning model built with PyTorch that analyzes medical imagery to detect anomalies.
+                  A quantitative trading algorithm for stocks and crypto using Python, focused on market analysis.
                 </p>
                 <div className="flex gap-2 mb-4">
-                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">PyTorch</span>
-                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">React</span>
                   <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">Python</span>
+                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">Pandas</span>
+                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">Streamlit</span>
                 </div>
               </div>
               <MotionLink
@@ -154,14 +153,14 @@ export default function Home() {
             <div className="bg-white/10 border border-white/50 backdrop-blur rounded-lg p-6 hover:shadow-2xl hover:border-red-500/50 transition-shadow h-full flex flex-col justify-between mx-4 md:m-0">
               <div>
                 <div className="h-1 w-10 bg-gradient-to-r from-red-600 to-red-400 mb-4 rounded"></div>
-                <h3 className="text-xl font-semibold mb-3 text-white text-left">FlowState</h3>
+                <h3 className="text-xl font-semibold mb-3 text-white text-left">RentKr</h3>
                 <p className="text-white/80 mb-4 text-left">
-                  A cross-platform productivity application written in Rust and Tauri for deep focus.
+                  A MERN stack website for renting items, targeted at bachelors and college students.
                 </p>
                 <div className="flex gap-2 mb-4">
-                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">Rust</span>
-                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">Tauri</span>
-                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">React</span>
+                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">React.js</span>
+                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">Node.js</span>
+                  <span className="bg-red-600/20 text-red-400 text-xs font-medium px-2 py-1 rounded">MongoDB</span>
                 </div>
               </div>
               <MotionLink
@@ -191,11 +190,6 @@ export default function Home() {
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
           
-          <motion.div whileHover={{ y: 2, scale: 0.9 }} className="flex flex-col items-center text-center">
-            <Image src="/tech-icons/rust.svg" alt="Rust" width={64} height={64} className="w-16 h-16 mb-4" />
-            <span className="font-semibold text-md text-white">Rust</span>
-          </motion.div>
-
           <motion.div whileHover={{ y: 2, scale: 0.9 }} className="flex flex-col items-center text-center">
             <Image src="/tech-icons/python.svg" alt="Python" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">Python</span>
@@ -246,6 +240,11 @@ export default function Home() {
           <motion.div whileHover={{ y: 2, scale: 0.9 }} className="flex flex-col items-center text-center">
             <Image src="/tech-icons/ai.svg" alt="Gen AI" width={64} height={64} className="w-16 h-16 mb-4" />
             <span className="font-semibold text-md text-white">Gen AI</span>
+          </motion.div>
+          
+          <motion.div whileHover={{ y: 2, scale: 0.9 }} className="flex flex-col items-center text-center">
+            <Image src="/tech-icons/rust.svg" alt="Rust" width={64} height={64} className="w-16 h-16 mb-4" />
+            <span className="font-semibold text-md text-white">Rust</span>
           </motion.div>
 
         </div>

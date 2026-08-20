@@ -7,7 +7,7 @@ export const Navbar = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-md w-[90%] text-white px-8 py-3 rounded-2xl shadow-xl flex items-center justify-between z-50">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-black/50 to-red-800/50 backdrop-blur-md w-[90%] max-w-4xl text-white px-8 py-3 rounded-2xl shadow-xl flex items-center justify-between z-50">
       {/* Logo / Name */}
       <Link href="/" className="text-lg font-bold tracking-wide">
         Hemanth
