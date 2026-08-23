@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import "../styles/globals.css";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,9 +15,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Hemanth | Portfolio",
-  description: "Showcasing my work in finance tech, web, and mobile development.",
+export const metadata = {
+  title: "Hemanth | Opsora Automation | AI & Systems Engineer",
+  description: "Portfolio of Hemanth, Founder of Opsora. Specializing in AI Automation, Market Intelligence, and Shelly—a lead generation automation tool.",
+  keywords: ["Hemanth", "Opsora", "Shelly Automation", "Lead Scraping", "Python AI", "Software Engineer", "MCA Student Portfolio"],
+  openGraph: {
+    title: "Hemanth | Founder of Opsora",
+    description: "Systems Engineer specializing in high-stakes automation and AI.",
+    url: "https://opsora.in",
+    images: [{ url: "/images/hero.png" }],
+  },
 };
 
 export default function RootLayout({
@@ -32,7 +39,9 @@ export default function RootLayout({
       >
         <Navbar />
 
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          {children} <Analytics /> <SpeedInsights />
+        </main>
 
         <Footer />
       </body>
