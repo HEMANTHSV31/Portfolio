@@ -1,66 +1,185 @@
 "use client";
-import Link from "next/link";
-import { useState } from "react";
-import { Menu, X, Download } from "lucide-react";
 
-export const Navbar = () => {
-  const [openDrawer, setOpenDrawer] = useState(false);
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Github, Linkedin } from "lucide-react"; // Added Zap for 'Energy'
+
+export function Navbar() {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  const navLink = (href: string) =>
+    `relative transition-all duration-300 px-4 py-1 uppercase tracking-[0.2em] text-[5px] md:text-[10px] font-black ${
+      pathname === href
+        ? "text-white bg-black skew-x-[-12deg] scale-110 shadow-[4px_4px_0px_#ff000020]" // Subtle cursed glow
+        : "text-black/70 hover:text-black hover:italic"
+    }`;
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-black/50 to-red-800/50 backdrop-blur-md w-[90%] max-w-4xl text-white px-8 py-3 rounded-2xl shadow-xl flex items-center justify-between z-50">
-      {/* Logo / Name */}
-      <Link href="/" className="text-lg font-bold tracking-wide">
-        Hemanth
-      </Link>
-
-      {/* Desktop Links */}
-      <div className="hidden md:flex items-center gap-8 font-medium">
-        <Link href="/projects" className="hover:text-red-400 transition">
-          Projects
-        </Link>
-        <Link href="/about" className="hover:text-red-400 transition">
-          About
-        </Link>
-        <a
-          href="/Hemanth_Resume.pdf"
-          download
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 border border-red-500 hover:bg-red-500 hover:text-white rounded-xl px-4 py-1.5 transition"
+    <header className="sticky top-0 z-[60] bg-white border-b-[6px] border-black">
+      <nav className="mx-auto max-w-7xl px-6 py-2 flex items-center justify-between">
+        {/* Brand: JJK Title Card Style */}
+        <Link
+          href="/"
+          className="group relative flex flex-col font-bebas leading-[0.8] tracking-tighter"
         >
-          <Download size={16} /> Resume
-        </a>
-      </div>
+          <div className="flex items-center gap-1">
+            <span className="text-black text-5xl group-hover:italic transition-all italic uppercase">
+              HEMANTH{" "}
+            </span>
+            {/* <Zap size={18} fill="black" className="animate-pulse" /> */}
+          </div>
+          {/* Decorative 'Seal' line */}
+          <div className="absolute -bottom-1 left-0 w-0 h-1 bg-black group-hover:w-full transition-all duration-500" />
+        </Link>
 
-      {/* Mobile Hamburger */}
-      <button
-        className="md:hidden"
-        onClick={() => setOpenDrawer(!openDrawer)}
-        aria-label="Toggle menu"
-      >
-        {openDrawer ? <X size={24} /> : <Menu size={24} />}
-      </button>
 
-      {/* Mobile Drawer */}
-      {openDrawer && (
-        <div className="absolute top-16 right-4 bg-zinc-900/95 px-6 py-4 rounded-xl shadow-lg space-y-4 flex flex-col font-medium md:hidden">
-          <Link href="/projects" onClick={() => setOpenDrawer(false)} className="hover:text-red-400">
-            Projects
-          </Link>
-          <Link href="/about" onClick={() => setOpenDrawer(false)} className="hover:text-red-400">
-            About
-          </Link>
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-4">
+          <div className="flex items-center gap-2 mr-4">
+            <Link href="/projects" className={navLink("/projects")}>
+              Projects
+            </Link>
+            <Link href="/about" className={navLink("/about")}>
+              About
+            </Link>
+            <Link href="/contact" className={navLink("/contact")}>
+              Contact
+            </Link>
+            <Link href="/blog" className={navLink("/blog")}>
+              Blog
+            </Link>
+          </div>
+
+          <div className="h-6 w-[2px] bg-black rotate-[20deg]" />
+
+          <div className="flex items-center gap-5 ml-4">
+            <a
+              href="https://www.linkedin.com/in/hemanth-s-v"
+              target="_blank"
+              className="text-black hover:scale-125 transition-transform"
+            >
+              <Linkedin size={18} strokeWidth={2.5} />
+            </a>
+            <a
+              href="https://github.com/HEMANTHSV31"
+              target="_blank"
+              className="text-black hover:scale-125 transition-transform"
+            >
+              <Github size={18} strokeWidth={2.5} />
+            </a>
+          </div>
+
+          {/* Resume CTA */}
           <a
             href="/Hemanth_Resume.pdf"
-            download
             target="_blank"
-            onClick={() => setOpenDrawer(false)}
-            className="flex items-center gap-2 border border-red-500 hover:bg-red-500 hover:text-white rounded-xl px-4 py-1.5 transition"
+            className="relative ml-6 border-[3px] border-black bg-white px-8 py-2 text-xs font-black text-black uppercase tracking-[0.3em] 
+             shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] 
+             transition-all overflow-hidden group"
           >
-            <Download size={16} /> Resume
+            {/* Halftone Dot Overlay */}
+            <span
+              className="absolute inset-0 opacity-0 group-hover:opacity-10 pointer-events-none transition-opacity"
+              style={{
+                backgroundImage: "radial-gradient(black 1.5px, transparent 0)",
+                backgroundSize: "6px 6px",
+              }}
+            />
+            <span className="relative z-10 flex items-center gap-2">
+              RESUME{" "}
+              <span className="text-[12px] opacity-40 group-hover:opacity-100 italic transition-opacity">
+                [🔻]
+              </span>
+            </span>
           </a>
         </div>
-      )}
-    </nav>
+
+        {/* Mobile Toggle: Rough cut */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden border-2 border-black p-2 bg-black text-white"
+          aria-label="Toggle menu"
+        >
+          <div className="space-y-1.5">
+            <span
+              className={`block h-[2px] w-6 bg-white transition-transform ${open ? "rotate-45 translate-y-2.5" : ""}`}
+            />
+            <span
+              className={`block h-[2px] w-6 bg-white ${open ? "opacity-0" : ""}`}
+            />
+            <span
+              className={`block h-[2px] w-8 bg-white transition-transform ${open ? "-rotate-45 -translate-y-2.5" : ""}`}
+            />
+          </div>
+        </button>
+      </nav>
+
+      {/* Mobile menu: 'Cursed Energy' Bleed */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ y: "-100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-100%" }}
+            transition={{ type: "spring", damping: 20 }}
+            className="fixed inset-0 bg-black text-white z-[70] flex flex-col justify-center px-12 gap-8 overflow-hidden"
+          >
+            {/* Background Halftones */}
+            <div
+              className="absolute inset-0 opacity-10 pointer-events-none"
+              style={{
+                backgroundImage: "radial-gradient(white 1.5px, transparent 0)",
+                backgroundSize: "12px 12px",
+              }}
+            />
+
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute top-18 right-8 text-white font-bebas text-2xl uppercase tracking-[0.5em] italic"
+            >
+              EXIT [×]
+            </button>
+
+            <div className="flex flex-col gap-8 relative z-10">
+              {["projects", "about", "contact","blog"].map((item, idx) => (
+                <Link
+                  key={item}
+                  href={`/${item}`}
+                  onClick={() => setOpen(false)}
+                  className="group text-5xl font-bebas italic uppercase tracking-tighter transition-all flex items-center gap-4"
+                >
+                  <span className="text-sm not-italic opacity-40">
+                    0 {idx + 1}
+                  </span>
+                  <span className="group-hover:pl-6 transition-all">
+                    {item}
+                  </span>
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-12 space-y-5 relative z-10 border-t border-white/20 pt-8">
+              <a
+                href="/Hemanth_Resume.pdf"
+                className="text-2xl font-black underline decoration-3 underline-offset-8 uppercase italic hover:text-gray-400"
+              >
+                VIEW_RESUME
+              </a>
+              <div className="flex mt-4 gap-8 font-bold uppercase tracking-widest text-xs">
+                <a href="https://www.linkedin.com/in/hemanth-s-v" className="hover:line-through">
+                  LinkedIn
+                </a>
+                <a href="https://github.com/HEMANTHSV31" className="hover:line-through">
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
-};
+}
