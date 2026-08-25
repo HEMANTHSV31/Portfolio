@@ -19,7 +19,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-[60] bg-white border-b-[6px] border-black">
-      <nav className="mx-auto max-w-7xl px-6 py-2 flex items-center justify-between">
+      <nav className="mx-auto w-full max-w-[90%] px-6 py-2 flex items-center justify-between">
         {/* Brand: JJK Title Card Style */}
         <Link
           href="/"
@@ -39,17 +39,17 @@ export function Navbar() {
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-4">
           <div className="flex items-center gap-2 mr-4">
-            <Link href="/projects" className={navLink("/projects")}>
-              Projects
-            </Link>
             <Link href="/about" className={navLink("/about")}>
               About
             </Link>
+            <Link href="/projects" className={navLink("/projects")}>
+              Projects
+            </Link>
+            <Link href="/achievements" className={navLink("/achievements")}>
+              Achievements
+            </Link>
             <Link href="/contact" className={navLink("/contact")}>
               Contact
-            </Link>
-            <Link href="/blog" className={navLink("/blog")}>
-              Blog
             </Link>
           </div>
 
@@ -144,7 +144,7 @@ export function Navbar() {
             </button>
 
             <div className="flex flex-col gap-8 relative z-10">
-              {["projects", "about", "contact","blog"].map((item, idx) => (
+              {["about", "projects", "achievements", "contact"].map((item, idx) => (
                 <Link
                   key={item}
                   href={`/${item}`}

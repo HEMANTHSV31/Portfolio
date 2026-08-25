@@ -12,7 +12,7 @@ export const Footer = () => (
            style={{ backgroundImage: `radial-gradient(#000 2px, transparent 0)`, backgroundSize: '10px 10px' }} />
     </div>
 
-    <div className="relative z-10 mx-auto max-w-7xl px-6">
+    <div className="relative z-10 mx-auto w-full max-w-[90%] px-6">
       <div className="grid md:grid-cols-12 gap-8 items-end">
         
         {/* PANEL 1: THE TITLE (Aggressive JJK Logo Style) */}
@@ -36,7 +36,7 @@ export const Footer = () => (
                <Zap size={10} fill="black" /> Backend Developer
              </p>
              <p className="font-bold text-lg text-black leading-tight uppercase">
-               Building distributed systems, automation infrastructure, and high-performance applications.
+               Designing scalable backend architectures and data-intensive applications.
              </p>
            </div>
            
