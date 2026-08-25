@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Github, Linkedin, Check, Code2 } from "lucide-react";
+import { Github, Linkedin, Code2 } from "lucide-react";
 
 export default function ContactPage() {
   const [status, setStatus] = useState("");
@@ -32,7 +32,7 @@ export default function ContactPage() {
         setStatus("TRANSMISSION FAILED. RETRY.");
         setTimeout(() => setStatus(""), 5000);
       }
-    } catch (err) {
+    } catch {
       setStatus("ERROR IN TRANSMISSION.");
       setTimeout(() => setStatus(""), 5000);
     }
