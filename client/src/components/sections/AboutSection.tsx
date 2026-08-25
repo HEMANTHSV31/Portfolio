@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 export default function AboutSection() {
   return (
     // Switched to bg-stone-950 for a deep, ink-black base
-    <section className="relative z-10 w-full max-w-[90%] mx-auto px-6 mt-12 mb-40 font-inter bg-stone-950 py-20 border-y border-stone-800">
+    <section className="relative z-10 w-full max-w-[90%] mx-auto px-6 mt-12 mb-0 font-inter bg-stone-950 pt-20 pb-10 border-y border-stone-800">
       
       {/* 1. THE "CURSED" GLITCH OVERLAY (Inverted for Dark Mode) */}
       <motion.div 
@@ -86,6 +86,29 @@ export default function AboutSection() {
                 Building high-throughput data processing pipelines, integrating <span className="text-stone-200 font-black italic">message brokers like Kafka and RabbitMQ</span> for real-time observability and reliability.
               </p>
             </div>
+          </div>
+
+          {/* Academic Record */}
+          <div className="pt-8 border-t-[4px] border-stone-800">
+             <h3 className="font-bebas text-3xl tracking-tight text-stone-100 italic mb-6">
+                03. ACADEMIC RECORD <span className="text-sm not-italic text-stone-600">{"// EDUCATION"}</span>
+             </h3>
+             <div className="grid sm:grid-cols-2 gap-8 md:gap-12">
+               <div>
+                  <h4 className="text-lg font-black uppercase text-stone-200">Bannari Amman Institute</h4>
+                  <p className="text-[10px] font-black tracking-[0.2em] uppercase text-stone-500 mb-2">Aug 2024 - Present</p>
+                  <p className="text-sm font-bold text-red-500 uppercase tracking-widest">B.Tech // AI & Machine Learning</p>
+                  <p className="text-sm font-black text-stone-400 mt-1">CGPA: 8.75</p>
+               </div>
+               <div>
+                  <h4 className="text-lg font-black uppercase text-stone-200">ST. Augustine Matric HR Sec</h4>
+                  <p className="text-[10px] font-black tracking-[0.2em] uppercase text-stone-500 mb-2">Hosur, Tamil Nadu</p>
+                  <div className="space-y-1">
+                    <p className="text-sm font-bold text-stone-400 uppercase tracking-widest">12th Grade: <span className="text-red-500">92.17%</span></p>
+                    <p className="text-sm font-bold text-stone-400 uppercase tracking-widest">10th Grade: <span className="text-red-500">90.20%</span></p>
+                  </div>
+               </div>
+             </div>
           </div>
 
           {/* Status Bar (Terminal Style) */}

@@ -7,6 +7,7 @@ type Item = {
   date: string
   description: string
   image?: string
+  bgPosition?: string
 }
 
 const ACHIEVEMENTS: Item[] = [
@@ -14,42 +15,47 @@ const ACHIEVEMENTS: Item[] = [
     title: "Winner - Dev Spark National Hackathon",
     date: "2025",
     description: "Developed Plantera, an intelligent environmental monitoring platform utilizing satellite imagery and ML to detect deforestation in real-time.",
-    image: "/achievements/Devspark.jpg"
+    image: "/achievements/Devspark.png",
+    bgPosition: "top"
   },
   {
     title: "Runner Up - SNS Ideathon 2026",
     date: "2026",
-    description: "Engineered a centralized inter-college event distribution platform, streamlining seamless cross-campus event sharing without individual verification barriers."
+    description: "Engineered a centralized inter-college event distribution platform, streamlining seamless cross-campus event sharing without individual verification barriers.",
+    image: "/achievements/SnsIdeathon.png",
+    bgPosition: "top"
   },
   {
     title: "Open Source Contributor - Medusa.js",
     date: "2026",
-    description: "Active contributor to Medusa.js, an open-source headless commerce platform, optimizing backend architecture and data processing."
+    description: "Active contributor to Medusa.js, an open-source headless commerce platform, optimizing backend architecture and data processing.",
+    image: "/achievements/opensource.png",
+    bgPosition: "top left"
   }
 ]
 
 const CERTIFICATIONS: Item[] = [
   {
     title: "AWS Certified Developer",
-    date: "2024",
+    date: "2026",
     description: "Validated expertise in developing, deploying, and debugging cloud-based applications using AWS services.",
     image: "/certifications/aws.png"
   },
   {
     title: "Oracle Cloud Infrastructure",
-    date: "2024",
+    date: "2025",
     description: "Certified in designing and deploying secure, scalable, and highly available architectures on Oracle Cloud.",
     image: "/certifications/oci.png"
   },
   {
     title: "Cisco JavaScript Essentials",
-    date: "2023",
+    date: "2026",
     description: "Demonstrated strong foundational knowledge of JavaScript programming, DOM manipulation, and asynchronous logic.",
     image: "/certifications/ciscojs.png"
   },
   {
     title: "Cisco Operating Systems",
-    date: "2023",
+    date: "2026",
     description: "Mastered core concepts of operating systems, including process management, memory allocation, and system security.",
     image: "/certifications/ciscoos.png"
   }
@@ -80,8 +86,11 @@ export default function AchievementsPage() {
           >
             {item.image && (
               <div 
-                className="absolute inset-0 z-0 opacity-20 grayscale group-hover:grayscale-0 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700 bg-cover bg-center"
-                style={{ backgroundImage: `url(${item.image})` }}
+                className="absolute inset-0 z-0 opacity-20 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 bg-cover bg-no-repeat"
+                style={{ 
+                  backgroundImage: `url(${item.image})`,
+                  backgroundPosition: item.bgPosition || 'center'
+                }}
               />
             )}
             
@@ -138,8 +147,11 @@ export default function AchievementsPage() {
           >
             {item.image && (
               <div 
-                className="absolute inset-0 z-0 opacity-20 grayscale group-hover:grayscale-0 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700 bg-cover bg-center"
-                style={{ backgroundImage: `url(${item.image})` }}
+                className="absolute inset-0 z-0 opacity-20 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 bg-cover bg-no-repeat"
+                style={{ 
+                  backgroundImage: `url(${item.image})`,
+                  backgroundPosition: item.bgPosition || 'center'
+                }}
               />
             )}
             
