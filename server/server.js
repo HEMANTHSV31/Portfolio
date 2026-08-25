@@ -19,6 +19,10 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+app.get('/ping', (req, res) => {
+  res.status(200).json({ status: 'ok', message: 'Server is alive' });
+});
+
 app.post('/api/contact', async (req, res) => {
   const { name, email, subject, message } = req.body;
 
