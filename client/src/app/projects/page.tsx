@@ -4,59 +4,48 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    name: "Shelly",
-    id: "shelly",
-    category: "Lead Gen Automation",
+    name: "Sri Bhuvaneshwari Plastics",
+    id: "spb-plastics",
+    category: "Workflow Automation",
     description:
-      "Automation platform for lead discovery, outreach workflows, and scalable cold-email operations.",
-    focus: "Bypassing anti-bot constraints & high-deliverability mail systems",
-    tech: ["Python", "Playwright", "SMTP", "Lead Scoring", "Streamlit"],
-    link: "https://github.com/HEMANTHSV31/Shelly",
-    images: ["/images/shelly.png"],
+      "Automated their billing system to accelerate approvals, successfully digitizing their entire paper-based workflow into robust software.",
+    focus: "Digitizing paper-based workflows & streamlining approvals",
+    tech: ["Web App", "Digitization", "Billing System", "Automation"],
+    link: "https://github.com/HEMANTHSV31/sri_bhuvaneshwari_plastics.git",
+    images: ["/projects/spb.png"], 
   },
   {
-    name: "Lexx",
-    id: "lexx",
-    category: "Legal AI",
+    name: "Stream Forge",
+    id: "stream-forge",
+    category: "Video Streaming Platform",
     description:
-      "Citation-grounded legal assistant for Indian law using RAG. Focused on correctness and domain constraints.",
-    focus: "Retrieval correctness under legal constraints",
-    tech: ["Next.js", "FastAPI", "RAG", "LLMs"],
-    link: "https://github.com/HEMANTHSV31/Lexx-LegalAI",
-    images: ["/images/lexxui.png"],
+      "A SaaS streaming platform for organizations and individuals to store videos in the cloud with CDN integration for high-performance streaming.",
+    focus: "High-performance video delivery & Cloud Storage",
+    tech: ["Video Streaming", "CDN", "Cloud Storage", "SaaS"],
+    link: "https://github.com/HEMANTHSV31/StreamForge.git",
+    images: ["/images/contact.png"], // Placeholder image
   },
   {
-    name: "Market Classifier",
-    id: "regime",
-    category: "Intelligence System",
+    name: "Ticket Booking System",
+    id: "ticket-booking",
+    category: "Booking Engine",
     description:
-      "Live system classifying crypto market regimes using multi-timeframe data and probabilistic models.",
-    link: "https://github.com/HEMANTHSV31/CryptoMarket_Regime_Classifier",
-    images: ["/images/regime-ui.png"],
-    focus: "Real-time detection under noisy conditions",
-    tech: ["Python", "LSTM", "HMM", "Time-series"],
+      "A comprehensive ticket reservation system handling real-time availability, secure user bookings, and transaction management.",
+    focus: "Handling concurrent user bookings reliably",
+    tech: ["Web App", "Booking Engine", "Database Management"],
+    link: "https://github.com/HEMANTHSV31/TicketBooking.git",
+    images: ["/images/contact.png"], // Placeholder image
   },
   {
-    name: "Dazai",
-    id: "dazai",
-    category: "Research System",
+    name: "Plantera",
+    id: "plantera",
+    category: "Environmental Monitoring",
     description:
-      "Market-regime aware research system with backtesting and risk-aware experimentation.",
-    focus: "Decision-making under noisy market regimes",
-    tech: ["Python", "Pandas", "Backtesting"],
-    link: "https://github.com/HEMANTHSV31/Dazai---Quant-Trading",
-    images: ["/images/dazaiui.png"],
-  },
-  {
-    name: "Zenin",
-    id: "zenin",
-    category: "Finance Tracker",
-    description:
-      "Mobile-first product focused on understanding spending behavior and long-term financial habits.",
-    focus: "Behavioral signals from financial data",
-    tech: ["React Native", "Firebase"],
-    link: "https://github.com/HEMANTHSV31/zenin",
-    images: ["/images/zenin-dashboard.jpg", "/images/zenin-login.jpg"],
+      "A comprehensive web application for real-time deforestation detection and environmental monitoring using satellite imagery and machine learning.",
+    focus: "Real-time detection and analysis using ML",
+    tech: ["Satellite Imagery", "Machine Learning", "Web App"],
+    link: "https://github.com/The-Plantera/Plantera-Web.git",
+    images: ["/projects/plantera.png"], // Updated to use the actual image
   },
 ];
 
