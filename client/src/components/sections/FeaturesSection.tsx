@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Terminal } from "lucide-react";
+import { Terminal } from "lucide-react";
 import Link from "next/link"; 
 
 interface ProjectCardProps {
