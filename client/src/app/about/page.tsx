@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import AchievementMarquee from "@/components/AchievementMarquee";
 
 type SkillGroup = {
   title: string;
@@ -90,6 +91,10 @@ export default function AboutPage() {
           </div>
         </header>
 
+        <div className="mb-12 md:mb-20 w-full">
+          <AchievementMarquee />
+        </div>
+
         {/* MAIN LAYOUT */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* LEFT - Philosophy & Focus */}
@@ -109,19 +114,13 @@ export default function AboutPage() {
                 <div className="h-1 flex-grow bg-black" /> CURRENT_FOCUS
               </h2>
               <ul className="space-y-4">
-                <li className="flex items-start gap-4 font-black uppercase text-[10px] md:text-xs tracking-widest group">
+                <li className="flex items-start gap-4 font-black uppercase text-[10px] md:text-xs tracking-widest">
                   <span className="text-red-600">[01]</span>
-                  <a
-                    href="https://linkedin.com/company/opsora-in"
-                    target="_blank"
-                    className="hover:underline"
-                  >
-                    Building automation systems and workflow infrastructure.
-                  </a>
+                  Designing highly-available backend architectures and robust APIs.
                 </li>
                 <li className="flex items-start gap-4 font-black uppercase text-[10px] md:text-xs tracking-widest">
                   <span className="text-red-600">[02]</span>
-                  Currently working on distributed systems
+                  Currently working on distributed systems and data pipelines.
                 </li>
                 <li className="flex items-start gap-4 font-black uppercase text-[10px] md:text-xs tracking-widest">
                   <span className="text-red-600">[03]</span>
